@@ -1,0 +1,30 @@
+Data,Conto,Operazione,Prodotto,Ticker,Nome Asset,TER,Valuta,Tasso di Conv.,QT. Scambio,Prezzo,Prezzo EUR,Imp. Nominale Operaz.,Commissioni,QT. Attuale,PMC,Imp. Residuo Asset,Imp. Effettivo Operaz.,Costo Rilasciato,Plusv. Lorda,Minusv. Generata,Scadenza,Zainetto Fiscale,Plusv. Imponibile,Imposta,P&L,Liquidita Attuale,Valore Titoli,NAV,Liq. Impegnata
+01-01-2000,BG Saxo,,,,,,,,,,,,,,,,,,,,,0.0,,,,0.0,0.0,0.0,0.0
+30-05-2025,BG Saxo,Deposito,Contanti,,,,EUR,,,,,200.0,,,,,200.0,,,,,0.0,,,,200.0,0.0,200.0,200.0
+30-05-2025,BG Saxo,Acquisto,Azioni,IONQ,"IonQ, Inc.",,USD,1.13001,4.0,-41.0,-36.2829,-145.13,0.88,4.0,36.5029,146.01,-146.01,,,,,0.0,,,,53.99,145.13,199.12,200.0
+30-05-2025,BG Saxo,Deposito,Contanti,,,,EUR,,,,,100.0,,,,,100.0,,,,,0.0,,,,153.99,141.81,295.8,300.0
+10-06-2025,BG Saxo,Acquisto,Azioni,QUBT,Quantum Computing Inc.,,USD,1.139306,9.0,-15.8779,-13.9365,-125.43,0.88,9.0,14.0342,126.31,-126.31,,,,,0.0,,,,27.68,264.52,292.2,300.0
+16-06-2025,BG Saxo,Vendita,Azioni,QUBT,Quantum Computing Inc.,,USD,1.16183,-9.0,19.132,16.4671,148.21,0.86,0.0,0.0,0.0,147.35,126.31,21.04,,,0.0,21.04,5.47,15.57,169.56,133.01,302.57,300.0
+17-06-2025,BG Saxo,Deposito,Contanti,,,,EUR,,,,,300.0,,,,,300.0,,,,,0.0,,,,469.56,131.72,601.28,600.0
+17-06-2025,BG Saxo,Acquisto,Azioni,AVGO,Broadcom Inc.,,USD,1.151726,1.0,-252.59,-219.3143,-219.31,0.87,1.0,220.1843,220.18,-220.18,,,,,0.0,,,,249.38,351.04,600.42,600.0
+17-06-2025,BG Saxo,Acquisto,Azioni,QBTS,D-Wave Quantum Inc.,,USD,1.151486,5.0,-15.83,-13.7475,-68.74,0.87,5.0,13.9215,69.61,-69.61,,,,,0.0,,,,179.77,415.47,595.24,600.0
+17-06-2025,BG Saxo,Acquisto,Azioni,QUBT,Quantum Computing Inc.,,USD,1.151403,8.0,-20.2862,-17.6187,-140.95,0.87,8.0,17.7274,141.82,-141.82,,,,,0.0,,,,37.95,554.99,592.94,600.0
+17-06-2025,BG Saxo,Acquisto,Azioni,IONQ,"IonQ, Inc.",,USD,1.150418,1.0,-37.9,-32.9445,-32.94,0.87,5.0,35.9652,179.83,-33.81,,,,,0.0,,,,4.14,584.09,588.23,600.0
+30-06-2025,BG Saxo,Dividendo,Dividendo,AVGO,Broadcom Inc.,,EUR,,,,,0.31,,,,,0.31,,,,,0.0,,,0.31,4.45,611.04,615.49,600.0
+10-07-2025,BG Saxo,Imposta,Bollo Q2 2025,,,,EUR,,,,,-0.11,,,,,-0.11,,,,,0.0,,,-0.11,4.34,629.15,633.49,600.0
+17-07-2025,BG Saxo,Vendita,Azioni,QBTS,D-Wave Quantum Inc.,,USD,1.161609,-5.0,18.73,16.1242,80.62,0.86,0.0,0.0,0.0,79.76,69.61,10.15,,,0.0,10.15,2.64,7.51,81.46,574.37,655.83,600.0
+17-07-2025,BG Saxo,Vendita,Azioni,IONQ,"IonQ, Inc.",,USD,1.161554,-5.0,44.33,38.1644,190.82,0.86,0.0,0.0,0.0,189.96,179.83,10.13,,,0.0,10.13,2.63,7.5,268.79,381.69,650.48,600.0
+17-07-2025,BG Saxo,Acquisto,Azioni,TSM,Taiwan Semiconductor Manufacturing Company Limited,,USD,1.155815,1.0,-247.02,-213.7193,-213.72,0.87,1.0,214.5893,214.59,-214.59,,,,,0.0,,,,54.2,595.4,649.6,600.0
+04-08-2025,BG Saxo,Deposito,Contanti,,,,EUR,,,,,50.0,,,,,50.0,,,,,0.0,,,,104.2,570.49,674.69,650.0
+18-08-2025,BG Saxo,Prelievo,Contanti,,,,EUR,,,,,-104.2,,,,,-104.2,,,,,0.0,,,,0.0,575.58,575.58,545.8
+22-09-2025,BG Saxo,Vendita,Azioni,QUBT,Quantum Computing Inc.,,USD,1.181078,-8.0,20.25,17.1454,137.16,0.85,0.0,0.0,0.0,136.31,141.82,,5.5,31-12-2029,5.5,,0.0,-5.5,136.31,520.94,657.25,545.8
+23-09-2025,BG Saxo,Deposito,Contanti,,,,EUR,,,,,150.0,,,,,150.0,,,,,5.5,,,,286.31,526.77,813.08,695.8
+23-09-2025,BG Saxo,Vendita,Azioni,TSM,Taiwan Semiconductor Manufacturing Company Limited,,USD,1.182496,-1.0,281.56,238.1065,238.11,0.85,0.0,0.0,0.0,237.26,214.59,22.67,,,0.0,17.17,4.46,18.21,519.11,287.21,806.32,695.8
+23-09-2025,BG Saxo,Vendita,Azioni,AVGO,Broadcom Inc.,,USD,1.182511,-1.0,343.21,290.2383,290.24,0.85,0.0,0.0,0.0,289.39,220.18,69.21,,,0.0,69.21,17.99,51.21,790.51,0.0,790.51,695.8
+23-09-2025,BG Saxo,Acquisto,ETF,MWEQ.MI,Invesco MSCI World Equal Weight UCITS ETF USD Accumulating,0.20%,EUR,1.0,158.0,-5.1082,-5.1082,-807.1,2.0,158.0,5.1209,809.1,-809.1,,,2.0,31-12-2029,2.0,,,,-18.59,807.1,788.51,695.8
+30-09-2025,BG Saxo,Dividendo,Dividendo,AVGO,Broadcom Inc.,,EUR,,,,,0.31,,,,,0.31,,,,,2.0,,,0.31,-18.28,803.27,784.99,695.8
+01-10-2025,BG Saxo,Deposito,Contanti,,,,EUR,,,,,20.0,,,,,20.0,,,,,2.0,,,,1.72,809.28,811.0,715.8
+10-10-2025,BG Saxo,Dividendo,Dividendo,TSM,Taiwan Semiconductor Manufacturing Company Limited,,EUR,,,,,0.41,,,,,0.41,,,,,2.0,,,0.41,2.13,806.75,808.88,715.8
+10-10-2025,BG Saxo,Imposta,Bollo Q3 2025,,,,EUR,,,,,-0.4,,,,,-0.4,,,,,2.0,,,-0.4,1.73,806.75,808.48,715.8
+15-10-2025,BG Saxo,Deposito,Contanti,,,,EUR,,,,,95.0,,,,,95.0,,,,,2.0,,,,96.73,814.81,911.54,810.8
+15-10-2025,BG Saxo,Acquisto,Azioni,POET,POET Technologies Inc.,,USD,1.159676,10.0,-8.985,-7.7479,-77.48,0.86,10.0,7.8339,78.34,-78.34,,,,,2.0,,,,18.39,892.28,910.67,810.8

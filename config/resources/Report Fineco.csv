@@ -1,0 +1,10 @@
+Data,Conto,Operazione,Prodotto,Ticker,Nome Asset,TER,Valuta,Tasso di Conv.,QT. Scambio,Prezzo,Prezzo EUR,Imp. Nominale Operaz.,Commissioni,QT. Attuale,PMC,Imp. Residuo Asset,Imp. Effettivo Operaz.,Costo Rilasciato,Plusv. Lorda,Minusv. Generata,Scadenza,Zainetto Fiscale,Plusv. Imponibile,Imposta,P&L,Liquidita Attuale,Valore Titoli,NAV,Liq. Impegnata
+01-01-2000,Fineco,,,,,,,,,,,,,,,,,,,,,0.0,,,,0.0,0.0,0.0,0.0
+03-03-2025,Fineco,Deposito,Contanti,,,,EUR,,,,,425.68,,,,,425.68,,,,,0.0,,,,425.68,0.0,425.68,425.68
+03-03-2025,Fineco,Acquisto,Azioni,AMD,"Advanced Micro Devices, Inc.",,USD,1.0465,2.0,-97.69,-93.3493,-186.7,3.77,2.0,95.2343,190.47,-190.47,,,,,0.0,,,,235.21,186.7,421.91,425.68
+04-03-2025,Fineco,Acquisto,Azioni,ARM,Arm Holdings plc,,USD,1.0465,2.0,-121.1,-115.7191,-231.44,3.77,2.0,117.6041,235.21,-235.21,,,,,0.0,,,,0.0,423.62,423.62,425.68
+07-10-2025,Fineco,Vendita,Azioni,AMD,"Advanced Micro Devices, Inc.",,USD,1.1701,-2.0,215.0,183.745,367.49,2.95,0.0,0.0,0.0,364.54,190.47,174.07,,,0.0,174.07,45.26,128.81,319.28,272.15,591.43,425.68
+07-10-2025,Fineco,Vendita,Azioni,ARM,Arm Holdings plc,,USD,1.170100,-2,157.0,134.1766,268.35,2.95,0.0,0.0,0.0,265.4,235.21,30.19,,,0.0,30.19,7.85,22.34,576.83,0.0,576.83,425.68
+08-10-2025,Fineco,Acquisto,ETF,AASI.MI,Amundi Index Solutions - Amundi MSCI Em Asia UCITS ETF-C EUR,0.20%,EUR,1.000000,+12,-44.775,-44.775,-537.3,0.0,12.0,44.775,537.3,-537.3,,,0.0,31-12-2029,0.0,,,,39.53,537.3,576.83,425.68
+09-10-2025,Fineco,Prelievo,Contanti,,,,EUR,,,,,-90.0,,,,,-90.0,,,,,0.0,,,,-50.47,539.04,488.57,335.68
+16-10-2025,Fineco,Deposito,Contanti,,,,EUR,,,,,55.0,,,,,55.0,,,,,0.0,,,,4.53,538.92,543.45,390.68
