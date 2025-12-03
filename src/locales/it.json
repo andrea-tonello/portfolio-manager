@@ -7,6 +7,11 @@
     "settings_tab": "Impostazioni",
     "settings_title": "Impostazioni"
   },
+  
+  "account_selection": {
+    "total_portfolio": "Totale Portafoglio",
+    "select_prompt": "Seleziona..."
+  },
 
   "home": {
     "main_card": {
@@ -15,11 +20,59 @@
       "operations_literal": "Operazioni effettuate"
     },
     "recent_transactions": "Ultimi movimenti",
-    "glossary": "Informazioni e Glossario"
+    "glossary": "Informazioni / Glossario"
   },
   
-  "account_selection": {
-    "total_portfolio": "Totale Portafoglio"
+  "operations": {
+    "cash": "Liquidità",
+    "etfs": "ETF",
+    "stocks": "Azioni",
+    "bonds": "Obbligazioni",
+    "remove_row": "Rimuovi ultima riga",
+    "save_report": "Esporta in CSV"
+  },
+
+  "analysis": {
+    "header_1": "Statistiche generali",
+    "performance": "Performance portafoglio",
+    "header_2": "Analisi rischio" 
+  },
+
+  "settings": {
+    "header_1": "Personalizzazione",
+    "theme": {
+      "name": "Tema",
+      "system": "Automatico",
+      "light": "Chiaro",
+      "dark": "Scuro"
+    },
+    "material": {
+      "name": "Material You",
+      "description": "Adatta la palette al tuo dispositivo"
+    },
+    "palette": {
+      "name": "Palette",
+      "blue": "Azzurro",
+      "green": "Verde",
+      "red": "Rosso",
+      "purple": "Violetto",
+      "orange": "Arancione"
+    },
+    "language": {
+      "name": "Lingua",
+      "it": "Italiano",
+      "en": "English"
+    },
+    "header_2": "Applicazione",
+    "add_account": {
+      "name": "Aggiungi conti"
+    },
+    "reset_accounts": {
+      "name": "Inizializza conti"
+    },
+    "reset_app": {
+      "name": "Reset dati applicazione"
+    }
   },
 
   "redirect": {
@@ -97,7 +150,7 @@
     "title": "\n--- ULTIMI MOVIMENTI (MAX 10) ---\n\n"
   },
 
-  "analysis": {
+  "analysis_cli": {
     "title": "\n--- ANALISI PORTAFOGLIO ---\n\n",
     "operations": "    1. Statistiche generali\n    2. Analisi correlazione\n    3. Drawdown\n    4. VaR",
     "summary": {
@@ -178,7 +231,7 @@
     }
   },
 
-  "settings": {
+  "settings_cli": {
     "title": "\n--- IMPOSTAZIONI APPLICAZIONE ---\n\n",
     "operations": "    1. Lingua\n    2. Aggiungi conti\n    3. Inizializza conti\n    4. Inizializza applicazione (richiede conferma)",
     "account": {

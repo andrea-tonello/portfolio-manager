@@ -1,4 +1,4 @@
-# FletTests app
+# Portfolio Manager GUI -- WIP
 
 ## Run the app
 

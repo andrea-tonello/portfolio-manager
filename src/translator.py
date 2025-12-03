@@ -10,7 +10,8 @@ class Translator:
         if getattr(sys, "frozen", False):
             base_path = sys._MEIPASS
         else:
-            base_path = os.getcwd()
+            cw_dir = os.path.abspath(__file__)
+            base_path = os.path.dirname(cw_dir)
         self.locales_dir = os.path.join(base_path, "locales")
         self.load_language(language_code)
 

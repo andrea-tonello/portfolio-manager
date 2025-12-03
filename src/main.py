@@ -12,25 +12,30 @@ from pages.settings_view import SettingsView
 
 LANG = {1: ("en", "English"), 2: ("it", "Italiano")}
 REP_DEF = "Report "
-config_folder = os.path.join(os.getcwd(), "config")
+
+# Get the absolute path of the current script file
+cw_dir = os.path.abspath(__file__)
+script_dir = os.path.dirname(cw_dir)
+config_folder = os.path.join(script_dir, "config")
+
 config_res_folder = os.path.join(config_folder, "resources")
 os.makedirs(config_res_folder, exist_ok=True)
 
 config_path = os.path.join(config_folder, "config.ini")
 config = configparser.ConfigParser()
 
-default_lang = LANG[1][0]    # default - en
-translator = Translator(language_code=default_lang)
+
+translator = Translator(language_code="it")
 lang_code = None
 if os.path.exists(config_path):
     config.read(config_path)
     if 'Language' in config and 'Code' in config['Language']:
         lang_code = config['Language']['Code']
 """if lang_code is None:
-    lang_code = mop.select_language(translator, config_folder, LANG)
-translator.load_language(lang_code)"""
+    lang_code = mop.select_language(translator, config_folder, LANG)"""
+translator.load_language(lang_code)
 
-translator = Translator(language_code="it")
+
 brokers = {}
 # Try to load brokers from config
 
@@ -73,19 +78,26 @@ def main(page: ft.Page):
 
 
 
-    body = ft.Container()#expand=True 
-
+# --- CHANGED: Use AnimatedSwitcher instead of Container ---
+    body = ft.AnimatedSwitcher(
+        content=ft.Container(),
+        transition=ft.AnimatedSwitcherTransition.SCALE, # Options: FADE, SCALE, ROTATION
+        duration=400,
+        #reverse_duration=100,
+        switch_in_curve=ft.AnimationCurve.FAST_LINEAR_TO_SLOW_EASE_IN,
+        #switch_out_curve=ft.AnimationCurve.EASE_OUT,
+    )
 
 
 
 
 # APP BARS =========================================================================
     home_app_bar = ft.AppBar(
-        toolbar_height=70,
+        toolbar_height=100,
         center_title=True,
         title=ft.Container(
             content=ft.Dropdown(
-                width=365,
+                width=310,
                 text_size=19,
                 filled=True,
                 fill_color=ft.Colors.ON_INVERSE_SURFACE,
@@ -98,38 +110,56 @@ def main(page: ft.Page):
                 selected_trailing_icon=ft.Icons.KEYBOARD_ARROW_UP,
                 
                 options=account_options_dropdown, 
-                value=translator.get("account_selection.total_portfolio"),
+                value=translator.get("account_selection.select_prompt"),
             ),
             padding=10,
             margin=ft.margin.only(top=15, left=20, right=20)
         ),
     )
+    
+    horizontal_divider = ft.Container(content=ft.Divider())
+    
     operations_app_bar = ft.AppBar(
-        toolbar_height=70,
+        toolbar_height=100,
         center_title=True,
-        title=ft.Container(
-            content=ft.Text(translator.get("navigation.operations_title"), size=25),
-            padding=10,
-            margin=ft.margin.only(top=10, left=20, right=20)
-        ),
+        title=ft.Column(
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            controls=[
+                ft.Container(
+                    margin=ft.margin.only(top=10, bottom=5),
+                    content=ft.Text(translator.get("navigation.operations_title"), size=25),
+                ),
+                horizontal_divider
+            ]
+        )
     )
     analysis_app_bar = ft.AppBar(
-        toolbar_height=70,
+        toolbar_height=100,
         center_title=True,
-        title=ft.Container(
-            content=ft.Text(translator.get("navigation.analysis_title"), size=25),
-            padding=10,
-            margin=ft.margin.only(top=10, left=20, right=20)
-        ),
+        title=ft.Column(
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            controls=[
+                ft.Container(
+                    margin=ft.margin.only(top=10, bottom=5),
+                    content=ft.Text(translator.get("navigation.analysis_title"), size=25),
+                ),
+                horizontal_divider
+            ]
+        )
     )
     settings_app_bar = ft.AppBar(
-        toolbar_height=70,
+        toolbar_height=100,
         center_title=True,
-        title=ft.Container(
-            content=ft.Text(translator.get("navigation.settings_title"), size=25),
-            padding=10,
-            margin=ft.margin.only(top=10, left=20, right=20)
-        ),
+        title=ft.Column(
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            controls=[
+                ft.Container(
+                    margin=ft.margin.only(top=10, bottom=5),
+                    content=ft.Text(translator.get("navigation.settings_title"), size=25),
+                ),
+                horizontal_divider
+            ]
+        )
     )
 
         
@@ -191,19 +221,19 @@ def main(page: ft.Page):
     def route_change(e: ft.RouteChangeEvent):
         route = e.route
         if route == "/" or route == "":
-            body.content = HomeView(page, account_options, num_operations)
+            body.content = HomeView(page, account_options, num_operations, key="home")
             nav_bar.selected_index = 0
             page.appbar = home_app_bar
         elif route == "/operations":
-            body.content = OperationsView(page, account_options, num_operations)
+            body.content = OperationsView(page, account_options_dropdown, num_operations, key="operations")
             nav_bar.selected_index = 1
             page.appbar = operations_app_bar
         elif route == "/analysis":
-            body.content = AnalysisView(page, account_options, num_operations)
+            body.content = AnalysisView(page, account_options_dropdown, num_operations, key="analysis")
             nav_bar.selected_index = 2
             page.appbar = analysis_app_bar
         elif route == "/settings":
-            body.content = SettingsView(page, account_options, num_operations)
+            body.content = SettingsView(page, account_options, num_operations, key="settings")
             nav_bar.selected_index = 3
             page.appbar = settings_app_bar
 

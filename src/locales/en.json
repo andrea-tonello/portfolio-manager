@@ -1,4 +1,42 @@
 {
+  "navigation": {
+    "operations_tab": "Operations",
+    "operations_title": "Add and remove Operations",
+    "analysis_tab": "Analytics",
+    "analysis_title": "Portfolio Analytics",
+    "settings_tab": "Settings",
+    "settings_title": "Settings"
+  },
+  
+  "account_selection": {
+    "total_portfolio": "Portfolio Total",
+    "select_prompt": "Choose..."
+  },
+
+  "home": {
+    "main_card": {
+      "tooltip_hide_amount": "Hide amount",
+      "hidden": "Hidden",
+      "operations_literal": "Number of transactions"
+    },
+    "recent_transactions": "Recent transactions",
+    "glossary": "Info / Glossary"
+  },
+  
+  "operations": {
+    "cash": "Cash operations",
+    "etfs": "ETFs",
+    "stocks": "Stocks",
+    "bonds": "Bonds",
+    "remove_row": "Remove last row",
+    "save_report": "Export to CSV"
+  },
+
+  "analysis": {
+    "liltitle_1": "Overview",
+    "performance": "Portfolio performance",
+    "liltitle_2": "Risk analysis" 
+  },
   "redirect": {
     "continue": "Press Enter to continue...",
     "continue_home": "\nPress Enter to return to the Main Menu...",
@@ -74,7 +112,7 @@
     "title": "\n--- RECENT TRANSACTIONS (MAX 10) ---\n\n"
   },
 
-  "analysis": {
+  "analysis_cli": {
     "title": "\n--- PORTFOLIO ANALYSIS ---\n\n",
     "operations": "    1. Statistics\n    2. Correlation analysis\n    3. Drawdown\n    4. VaR",
     "summary": {
