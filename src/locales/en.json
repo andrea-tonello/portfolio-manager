@@ -37,6 +37,47 @@
     "performance": "Portfolio performance",
     "liltitle_2": "Risk analysis" 
   },
+
+  "settings": {
+    "header_1": "Appearance",
+    "theme": {
+      "name": "Theme",
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "material": {
+      "name": "Material You",
+      "description": "Adapts the color palette to your device"
+    },
+    "palette": {
+      "name": "Color palette",
+      "blue": "Light Blue",
+      "green": "Forest Green",
+      "red": "Red",
+      "purple": "Violet",
+      "orange": "Orange"
+    },
+    "language": {
+      "name": "Language",
+      "it": "Italiano",
+      "en": "English"
+    },
+    "header_2": "Application settings",
+    "add_account": {
+      "name": "Add accounts"
+    },
+    "reset_accounts": {
+      "name": "Initialize accounts"
+    },
+    "reset_app": {
+      "name": "Full app reset"
+    }
+  },
+
+
+
+
   "redirect": {
     "continue": "Press Enter to continue...",
     "continue_home": "\nPress Enter to return to the Main Menu...",
@@ -193,7 +234,7 @@
     }
   },
 
-  "settings": {
+  "settings_cli": {
     "title": "\n--- PROGRAM SETTINGS ---\n\n",
     "operations": "    1. Language\n    2. Add accounts\n    3. Initialize accounts\n    4. Initialize application (requires confirmation)",
     "account": {

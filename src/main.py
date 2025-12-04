@@ -31,8 +31,6 @@ if os.path.exists(config_path):
     config.read(config_path)
     if 'Language' in config and 'Code' in config['Language']:
         lang_code = config['Language']['Code']
-"""if lang_code is None:
-    lang_code = mop.select_language(translator, config_folder, LANG)"""
 translator.load_language(lang_code)
 
 
@@ -45,13 +43,6 @@ if os.path.exists(config_path) and 'Brokers' in config:
         brokers = {int(k): v for k, v in config.items('Brokers')}
     except ValueError:
         pass
-# If no brokers found (first boot or empty section), initialize
-"""if not brokers:
-    print(translator.get("main_menu.first_boot"))
-    brokers = mop.initialize_brokers(translator, config_folder)
-    os.system("cls" if os.name == "nt" else "clear")    
-for broker_name in list(brokers.values()):
-    create_defaults(config_res_folder, broker_name)"""
 
 account_options = [translator.get("account_selection.total_portfolio")]
 account_options.extend(list(brokers.values()))
@@ -62,38 +53,28 @@ account_options_dropdown = str_to_dropdown(account_options)
 
 
 def main(page: ft.Page):
-    #page.views.clear()
-    #page.views.append(View("/"))
     page.title = "Portfolio Manager"
-    page.padding = 0  # Remove padding so the navbar touches the edges
+    page.padding = 0
     page.theme_mode = ft.ThemeMode.SYSTEM
     page.theme = ft.Theme(color_scheme_seed=ft.Colors.BLUE)
-    page.adaptive=True
-    #page.vertical_alignment = ft.MainAxisAlignment.CENTER
+    page.adaptive = True
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
-    #page.window_width = 400
-    #page.window_height = 600
-    #page.window_resizable = False
 
 
-
-
-# --- CHANGED: Use AnimatedSwitcher instead of Container ---
+    # --- CHANGED: Use AnimatedSwitcher with scrollable content ---
     body = ft.AnimatedSwitcher(
         content=ft.Container(),
-        transition=ft.AnimatedSwitcherTransition.SCALE, # Options: FADE, SCALE, ROTATION
+        transition=ft.AnimatedSwitcherTransition.SCALE,
         duration=400,
-        #reverse_duration=100,
         switch_in_curve=ft.AnimationCurve.FAST_LINEAR_TO_SLOW_EASE_IN,
-        #switch_out_curve=ft.AnimationCurve.EASE_OUT,
+        expand=True,  # Allow it to fill available space
     )
 
 
-
-
-# APP BARS =========================================================================
+    # APP BARS =========================================================================
     home_app_bar = ft.AppBar(
         toolbar_height=100,
+        bgcolor=ft.Colors.SURFACE,
         center_title=True,
         title=ft.Container(
             content=ft.Dropdown(
@@ -102,9 +83,9 @@ def main(page: ft.Page):
                 filled=True,
                 fill_color=ft.Colors.ON_INVERSE_SURFACE,
                 border_color=ft.Colors.SECONDARY,
-                focused_border_color=ft.Colors.INVERSE_PRIMARY,     # this does not apply for some fucking reason
+                focused_border_color=ft.Colors.INVERSE_PRIMARY,
                 border_width=3,
-                focused_border_width=8,                             # this does not apply for some fucking reason
+                focused_border_width=8,
                 border_radius=ft.border_radius.all(15),
                 trailing_icon=ft.Icons.KEYBOARD_ARROW_DOWN,
                 selected_trailing_icon=ft.Icons.KEYBOARD_ARROW_UP,
@@ -116,67 +97,22 @@ def main(page: ft.Page):
             margin=ft.margin.only(top=15, left=20, right=20)
         ),
     )
-    
-    horizontal_divider = ft.Container(content=ft.Divider())
-    
-    operations_app_bar = ft.AppBar(
-        toolbar_height=100,
-        center_title=True,
-        title=ft.Column(
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-            controls=[
-                ft.Container(
-                    margin=ft.margin.only(top=10, bottom=5),
-                    content=ft.Text(translator.get("navigation.operations_title"), size=25),
-                ),
-                horizontal_divider
-            ]
-        )
-    )
-    analysis_app_bar = ft.AppBar(
-        toolbar_height=100,
-        center_title=True,
-        title=ft.Column(
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-            controls=[
-                ft.Container(
-                    margin=ft.margin.only(top=10, bottom=5),
-                    content=ft.Text(translator.get("navigation.analysis_title"), size=25),
-                ),
-                horizontal_divider
-            ]
-        )
-    )
-    settings_app_bar = ft.AppBar(
-        toolbar_height=100,
-        center_title=True,
-        title=ft.Column(
-            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-            controls=[
-                ft.Container(
-                    margin=ft.margin.only(top=10, bottom=5),
-                    content=ft.Text(translator.get("navigation.settings_title"), size=25),
-                ),
-                horizontal_divider
-            ]
-        )
-    )
+        
+    operations_app_bar = TitleAppbar(translator.get("navigation.operations_title"), text_size=25)
+    analysis_app_bar = TitleAppbar(translator.get("navigation.analysis_title"), text_size=25)
+    settings_app_bar = TitleAppbar(translator.get("navigation.settings_title"), text_size=25)
 
         
-
-# MIDDLE - Page layout ==================================================================
-    page_layout = ft.SafeArea(
-        ft.Column(
-            alignment = ft.MainAxisAlignment.CENTER,
-            horizontal_alignment = ft.CrossAxisAlignment.CENTER,
-            controls=[
-                body,
-            ],
-        )
+    # MIDDLE - Page layout with scrolling ==================================================================
+    page_layout = ft.Column(
+        controls=[
+            body,
+        ],
+        expand=True,
     )
 
 
-# BOTTOM - Navigation Bar =========================================================================
+    # BOTTOM - Navigation Bar =========================================================================
     def nav_change(e):
         index = e.control.selected_index
         if index == 0:
@@ -203,8 +139,8 @@ def main(page: ft.Page):
                 label=translator.get("navigation.operations_tab")
             ),
             AdaptiveNavigationBarDestination(
-                ios_icon=ft.CupertinoIcons.GRAPH_SQUARE, android_icon=ft.Icons.AUTO_GRAPH_OUTLINED, 
-                ios_selected=ft.CupertinoIcons.GRAPH_SQUARE, android_selected=ft.Icons.AUTO_GRAPH,
+                ios_icon=ft.CupertinoIcons.GRAPH_SQUARE, android_icon=ft.Icons.DATA_THRESHOLDING_OUTLINED, 
+                ios_selected=ft.CupertinoIcons.GRAPH_SQUARE, android_selected=ft.Icons.DATA_THRESHOLDING,
                 label=translator.get("navigation.analysis_tab")
             ),
             AdaptiveNavigationBarDestination(
@@ -216,8 +152,7 @@ def main(page: ft.Page):
     )
     
 
-# Initialize =======================================================================================
-
+    # Initialize =======================================================================================
     def route_change(e: ft.RouteChangeEvent):
         route = e.route
         if route == "/" or route == "":

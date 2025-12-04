@@ -3,7 +3,7 @@ import flet as ft
 def create_adaptive_control(base_class):
     """
     Dynamically creates a class inheriting from the provided base_class
-    with adaptive icon logic injected.
+    with adaptive icon logic injected (iOS/Android).
     """
     class AdaptiveControl(base_class):
         def __init__(self, ios_icon, android_icon, ios_selected, android_selected, *args, **kwargs):
@@ -41,6 +41,26 @@ AdaptiveIconButton = create_adaptive_control(ft.IconButton)
 AdaptiveFloatingActionButton = create_adaptive_control(ft.FloatingActionButton)
 AdaptiveElevatedButton = create_adaptive_control(ft.ElevatedButton)
 
+class TitleAppbar(ft.AppBar):
+    def __init__(self, text:str, text_size:int):
+        super().__init__()
+        self.text=text
+        self.text_size=text_size
+        self.toolbar_height=100
+        self.bgcolor=ft.Colors.SURFACE
+        self.surface_tint_color=ft.Colors.TRANSPARENT
+        self.center_title=True
+        self.title=ft.Column(
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            controls=[
+                ft.Container(
+                    margin=ft.margin.only(top=10, bottom=5),
+                    content=ft.Text(text, size=text_size),
+                ),
+                ft.Container(content=ft.Divider())
+            ]
+        )
+
 class OptionButton(ft.Container):
     def __init__(self, text:ft.Text, icon:ft.Icon, margin_top:float=0, margin_bottom:float=10):
         super().__init__()
@@ -57,8 +77,8 @@ class OptionButton(ft.Container):
                     ft.Container(
                         width=self.width,
                         margin=ft.margin.only(left=25),
-                    col={"xs": 9, "sm": 9},
-                    content=text
+                        col={"xs": 9, "sm": 9},
+                        content=text
                     ),
                     ft.Container(
                         width=self.width,
@@ -69,6 +89,14 @@ class OptionButton(ft.Container):
             )
         )
 
-ft.FloatingActionButton()
 
-
+class LittleHeader(ft.Container):
+    def __init__(self, text:ft.Text):
+        super().__init__()
+        self.padding = ft.padding.only(left=15, top=20, bottom=5)
+        self.content=ft.Text(
+            value=text,
+            color=ft.Colors.PRIMARY, # Matches the color in your image
+            weight=ft.FontWeight.BOLD,
+            size=14, 
+        )

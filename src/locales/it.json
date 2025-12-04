@@ -1,5 +1,9 @@
 {
   "navigation": {
+    "proceed": "Procedi",
+    "confirm": "Conferma",
+    "ok": "OK",
+    "cancel": "Annulla",
     "operations_tab": "Operazioni",
     "operations_title": "Aggiungi e rimuovi Operazioni",
     "analysis_tab": "Analisi",
@@ -53,10 +57,13 @@
     "palette": {
       "name": "Palette",
       "blue": "Azzurro",
-      "green": "Verde",
+      "teal": "Verde Acqua",
+      "green": "Verde Foresta",
+      "yellow": "Giallo",
+      "orange": "Arancione",
       "red": "Rosso",
-      "purple": "Violetto",
-      "orange": "Arancione"
+      "purple": "Viola",
+      "violet": "Violetto"
     },
     "language": {
       "name": "Lingua",
@@ -64,16 +71,31 @@
       "en": "English"
     },
     "header_2": "Applicazione",
-    "add_account": {
-      "name": "Aggiungi conti"
-    },
-    "reset_accounts": {
-      "name": "Inizializza conti"
+    "manage_accounts": {
+      "name": "Gestione account",
+      "description": "Aggiungi, rimuovi o modifica",
+      "add": {
+        "name": "Aggiungi"
+      },
+      "remove": {
+        "name": "Rimuovi"
+      },
+      "change": {
+        "name": "Modifica alias conto"
+      }
     },
     "reset_app": {
-      "name": "Reset dati applicazione"
+      "name": "Ripristina applicazione",
+      "description": "Richiede conferma",
+      "first_attempt": "I dati salvati andranno persi. Cliccando su \"Procedi\" verrà chiesta un'ulteriore conferma",
+      "second_attempt": "Digitare RESET per procedere"
     }
   },
+
+
+
+
+
 
   "redirect": {
     "continue": "Premi Invio per continuare...",

@@ -49,24 +49,21 @@ class OperationsView(ft.Container):
             icon = ft.Icon(ft.Icons.ADD, size=30)
         )
 
-        home_outer_container = ft.Container(
-            #height=1000,
-            #bgcolor=ft.Colors.TERTIARY,
-            alignment=ft.alignment.center,
-            content=ft.Column(
-                #alignment=ft.MainAxisAlignment.CENTER,
-                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                controls=[
-                    account_selection,
-                    cash_op,
-                    etf_op,
-                    stock_op,
-                    bond_op
-                ],
-            )
-        )    
+        scrollable_content = ft.Column(
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            controls=[
+                account_selection,
+                cash_op,
+                etf_op,
+                stock_op,
+                bond_op,
+                bond_op,
+                bond_op,
+                bond_op
+            ],
+            scroll=ft.ScrollMode.AUTO,
+            expand=True,
+        )
         
-
-        self.content = home_outer_container
-    
+        self.content = scrollable_content
         self.page.update()

@@ -11,17 +11,17 @@ class HomeView(ft.Container):
         self.account_options = account_options
         self.num_operations = num_operations
 
-        self.money_integer = ft.Container(
+        money_integer = ft.Container(
             height=80,
             content=ft.Text("14000", size=70)
         )
-        self.money_float = ft.Container(
+        money_float = ft.Container(
             height=80,   # same height as the large text
             margin=ft.margin.only(top=40),
             alignment=ft.alignment.bottom_left,
             content=ft.Text(".13€", size=30)# smaller & bottom aligned
         )
-        self.money_total=ft.Container(
+        money_total=ft.Container(
             border_radius=15,
             expand=True,
             height=80,
@@ -29,12 +29,12 @@ class HomeView(ft.Container):
             content=ft.Row(
                 spacing=0,
                 controls=[
-                    self.money_integer,
-                    self.money_float
+                    money_integer,
+                    money_float
                 ]
             )
         )
-        self.visibility_button = ft.FloatingActionButton(
+        visibility_button = ft.FloatingActionButton(
             bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST,
             icon=ft.Icons.VISIBILITY,
             data=ft.Icons.VISIBILITY_OFF,
@@ -43,13 +43,13 @@ class HomeView(ft.Container):
             tooltip=translator.get("home.main_card.tooltip_hide_amount"),
             on_click=self._toggle_money_visibility
         )
-        self.money_display = ft.Row(
+        money_display = ft.Row(
             spacing=2,  # space between integer and fractional part
             controls=[
-                self.money_total,
+                money_total,
             ],
         )
-        self.money_card = ft.Card(
+        money_card = ft.Card(
             width=800,
             height=300,
             elevation=8,
@@ -68,12 +68,12 @@ class HomeView(ft.Container):
                             content=ft.Column(
                                 horizontal_alignment=ft.CrossAxisAlignment.START,
                                 controls=[
-                                    self.money_display,
+                                    money_display,
                                     ft.Row(
                                         controls=[
                                             ft.Container(
                                                 margin=ft.margin.only(left=10),
-                                                content=self.visibility_button
+                                                content=visibility_button
                                             ),
                                             ft.Column(
                                                 spacing=5,
@@ -101,16 +101,16 @@ class HomeView(ft.Container):
                 )
             )
         )
-        self.recent_transactions = OptionButton(
+        recent_transactions = OptionButton(
             text = ft.Text(translator.get("home.recent_transactions"), size=20),
             icon = ft.Icon(ft.Icons.ARROW_FORWARD_IOS_ROUNDED)
         )
-        self.glossary = OptionButton(
+        glossary = OptionButton(
             text = ft.Text(translator.get("home.glossary"), size=20),
             icon = ft.Icon(ft.Icons.ARROW_FORWARD_IOS_OUTLINED)
         )
 
-        self.home_outer_container = ft.Container(
+        home_outer_container = ft.Container(
             #height=1000,
             #bgcolor=ft.Colors.TERTIARY,
             alignment=ft.alignment.center,
@@ -118,15 +118,14 @@ class HomeView(ft.Container):
                 #alignment=ft.MainAxisAlignment.CENTER,
                 horizontal_alignment=ft.CrossAxisAlignment.CENTER,
                 controls=[
-                    self.money_card,
-                    self.recent_transactions,
-                    self.glossary
+                    money_card,
+                    recent_transactions,
+                    glossary
                 ],
             )
         )    
         
-
-        self.content = self.home_outer_container
+        self.content = home_outer_container
     
 
     def _toggle_money_visibility(self, e):

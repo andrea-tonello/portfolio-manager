@@ -23,5 +23,8 @@ def str_to_dropdown(str_list: list) -> list:
         ) 
         for index, item in enumerate(str_list)
     ]
-    
     return dropdown_options
+
+
+def reset_app():
+    print("App reset!")
