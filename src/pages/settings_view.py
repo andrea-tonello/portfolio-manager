@@ -124,10 +124,6 @@ class SettingsView(ft.Container):
         )
             
 
-
-
-
-
         def on_language_click(e):
             print("Language button clicked")
             # Add your language change logic here
@@ -238,11 +234,15 @@ class SettingsView(ft.Container):
                     on_button_click=lambda e: page.open(first_reset_dialog)
                 )
             ],
-            scroll=ft.ScrollMode.AUTO,
-            expand=True,
         )
         
-        self.content = scrollable_content
+        # Use ListView instead of scrollable Column for alignment purposes
+        self.content = ft.ListView(
+            controls=[scrollable_content],
+            expand=True,
+            spacing=0,
+            padding=0,
+        )
         self.page.update()
 
 

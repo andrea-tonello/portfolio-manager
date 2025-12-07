@@ -135,7 +135,7 @@ def main(page: ft.Page):
             ),
             AdaptiveNavigationBarDestination(
                 ios_icon=ft.Icons.POST_ADD, android_icon=ft.Icons.POST_ADD, 
-                ios_selected=ft.Icons.POST_ADD, android_selected=ft.Icons.POST_ADD, 
+                ios_selected=ft.Icons.POST_ADD, android_selected=ft.Icons.POST_ADD,
                 label=translator.get("navigation.operations_tab")
             ),
             AdaptiveNavigationBarDestination(

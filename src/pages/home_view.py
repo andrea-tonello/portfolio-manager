@@ -11,17 +11,17 @@ class HomeView(ft.Container):
         self.account_options = account_options
         self.num_operations = num_operations
 
-        money_integer = ft.Container(
+        self.money_integer = ft.Container(
             height=80,
             content=ft.Text("14000", size=70)
         )
-        money_float = ft.Container(
+        self.money_float = ft.Container(
             height=80,   # same height as the large text
             margin=ft.margin.only(top=40),
             alignment=ft.alignment.bottom_left,
             content=ft.Text(".13€", size=30)# smaller & bottom aligned
         )
-        money_total=ft.Container(
+        self.money_total=ft.Container(
             border_radius=15,
             expand=True,
             height=80,
@@ -29,8 +29,8 @@ class HomeView(ft.Container):
             content=ft.Row(
                 spacing=0,
                 controls=[
-                    money_integer,
-                    money_float
+                    self.money_integer,
+                    self.money_float
                 ]
             )
         )
@@ -46,7 +46,7 @@ class HomeView(ft.Container):
         money_display = ft.Row(
             spacing=2,  # space between integer and fractional part
             controls=[
-                money_total,
+                self.money_total,
             ],
         )
         money_card = ft.Card(

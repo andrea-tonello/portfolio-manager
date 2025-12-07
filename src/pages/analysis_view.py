@@ -49,24 +49,22 @@ class AnalysisView(ft.Container):
             icon = ft.Icon(ft.Icons.ARROW_FORWARD_IOS_OUTLINED)
         )
 
-        home_outer_container = ft.Container(
-            #height=1000,
-            #bgcolor=ft.Colors.TERTIARY,
-            alignment=ft.alignment.center,
-            content=ft.Column(
-                #alignment=ft.MainAxisAlignment.CENTER,
-                horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-                controls=[
-                    account_selection,
-                    cash_op,
-                    etf_op,
-                    stock_op,
-                    bond_op
-                ],
-            )
+        scrollable_content = ft.Column(
+            horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            controls=[
+                account_selection,
+                cash_op,
+                etf_op,
+                stock_op,
+                bond_op
+            ],
         )    
-        
 
-        self.content = home_outer_container
-    
+        # Use ListView instead of scrollable Column for alignment purposes
+        self.content = ft.ListView(
+            controls=[scrollable_content],
+            expand=True,
+            spacing=0,
+            padding=0,
+        )
         self.page.update()

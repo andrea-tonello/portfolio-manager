@@ -61,9 +61,13 @@ class OperationsView(ft.Container):
                 bond_op,
                 bond_op
             ],
-            scroll=ft.ScrollMode.AUTO,
-            expand=True,
         )
         
-        self.content = scrollable_content
+        # Use ListView instead of scrollable Column for alignment purposes
+        self.content = ft.ListView(
+            controls=[scrollable_content],
+            expand=True,
+            spacing=0,
+            padding=0,
+        )
         self.page.update()
